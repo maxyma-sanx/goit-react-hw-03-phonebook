@@ -6,15 +6,17 @@ export const ListIcon = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 30px;
   height: 30px;
+
   border-radius: 50%;
   background-color: ${getRandomHexColor};
 `;
 
 export const ListBtn = styled.button`
   border: none;
-  background-color: transparent;
+  background-color: ${({ theme }) => theme.colors.transparent};
   cursor: pointer;
   opacity: 0.7;
 
@@ -26,27 +28,29 @@ export const ListBtn = styled.button`
 
 export const ContactsTable = styled.table`
   width: 100%;
+
   border-collapse: collapse;
 `;
 
 export const ContactsTableHead = styled.th`
   padding: 15px;
+
   font-weight: 500;
   font-size: 16px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
   background-color: #8ea7e9;
 
   :not(:last-child) {
-    border-right: 1px solid #fff;
+    border-right: 1px solid ${({ theme }) => theme.colors.white};
   }
 `;
 
 export const ContactsTableRow = styled.tr`
-  background-color: transparent;
-  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: ${({ theme }) => theme.colors.transparent};
+  transition: opacity ${({ theme }) => theme.transitions.slower};
 
   :hover {
-    background-color: #e5e0ff;
+    background-color: ${({ theme }) => theme.colors.accentSecondary};
   }
 `;
 
@@ -55,7 +59,7 @@ export const ContactsTableCeil = styled.td`
   text-align: center;
 
   :not(:last-child) {
-    border-right: 1px solid darkgrey;
+    border-right: 1px solid ${({ theme }) => theme.colors.darkgrey};
   }
 `;
 
@@ -66,6 +70,6 @@ export const ContactsFlexCeil = styled.td`
   padding: 10px;
 
   :not(:last-child) {
-    border-right: 1px solid darkgrey;
+    border-right: 1px solid ${({ theme }) => theme.colors.darkgrey};
   }
 `;

@@ -3,8 +3,8 @@ import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 
+import { Wrapper } from './Wrapper';
 import { GlobalStyle } from './GlobalStyle';
-import { Layout } from './GlobalStyle/Layout/Layout.styled';
 
 import { Section } from './Section';
 import { ContactForm } from './ContactForm';
@@ -30,6 +30,20 @@ export class App extends Component {
     contacts: this.props.initialContacts,
     filter: '',
   };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
+
+  componentDidMount() {
+    const localContacts = JSON.parse(localStorage.getItem('contacts'));
+
+    if (localContacts) {
+      this.setState({ contacts: localContacts });
+    }
+  }
 
   addContact = (name, number) => {
     const currentName = this.state.contacts.find(item => item.name === name);
@@ -70,7 +84,7 @@ export class App extends Component {
     const filteredContacts = this.getFilteredContacts();
 
     return (
-      <Layout>
+      <Wrapper>
         <Section title="Add contact" headerContent={<Social />}>
           <ContactForm onSubmit={this.addContact} />
         </Section>
@@ -89,7 +103,7 @@ export class App extends Component {
         )}
 
         <GlobalStyle />
-      </Layout>
+      </Wrapper>
     );
   }
 }

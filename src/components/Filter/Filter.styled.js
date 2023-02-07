@@ -10,25 +10,25 @@ export const FilterLabel = styled.label`
   left: 9px;
   padding: 0 5px;
   opacity: 0.8;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all ${({ theme }) => theme.transitions.slower};
   pointer-events: none;
 `;
 
 export const FilterInput = styled.input`
   padding: 8px;
-  background: transparent;
-  border: 2px solid #e5e0ff;
+  background: ${({ theme }) => theme.colors.transparent};
+  border: 2px solid ${({ theme }) => theme.colors.accentSecondary};
   border-radius: 5px;
 
   :focus {
-    outline: 1px solid #8ea7e9;
+    outline: 1px solid ${({ theme }) => theme.colors.accentPrimary};
   }
 
   :focus ~ label,
   :not(:placeholder-shown) ~ label {
     top: -8px;
     font-size: 12px;
-    background-color: white;
+    background-color: ${({ theme }) => theme.colors.white};
     opacity: 1;
   }
 `;

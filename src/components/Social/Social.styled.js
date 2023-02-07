@@ -6,7 +6,7 @@ export const SocialWrapper = styled.div`
 `;
 
 export const SocialLink = styled.a`
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform ${({ theme }) => theme.transitions.faster};
 
   :hover,
   :focus {
