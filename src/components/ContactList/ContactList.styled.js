@@ -17,8 +17,8 @@ export const ListIcon = styled.span`
 export const ListBtn = styled.button`
   border: none;
   background-color: ${({ theme }) => theme.colors.transparent};
-  cursor: pointer;
   opacity: 0.7;
+  cursor: pointer;
 
   :hover,
   :focus {
@@ -35,10 +35,10 @@ export const ContactsTable = styled.table`
 export const ContactsTableHead = styled.th`
   padding: 15px;
 
-  font-weight: 500;
   font-size: 16px;
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
   color: ${({ theme }) => theme.colors.white};
-  background-color: #8ea7e9;
+  background-color: ${({ theme }) => theme.colors.accentPrimary};
 
   :not(:last-child) {
     border-right: 1px solid ${({ theme }) => theme.colors.white};
@@ -47,6 +47,7 @@ export const ContactsTableHead = styled.th`
 
 export const ContactsTableRow = styled.tr`
   background-color: ${({ theme }) => theme.colors.transparent};
+
   transition: opacity ${({ theme }) => theme.transitions.slower};
 
   :hover {
@@ -67,6 +68,7 @@ export const ContactsFlexCeil = styled.td`
   display: flex;
   align-items: center;
   gap: 15px;
+
   padding: 10px;
 
   :not(:last-child) {

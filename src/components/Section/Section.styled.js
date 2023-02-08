@@ -11,7 +11,9 @@ export const PhonebookSection = styled.section`
 
 export const PhonebookContainer = styled.div`
   min-width: 500px;
+
   padding-top: 20px;
+
   box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.accentPrimary},
     8px 8px 0 0 ${({ theme }) => theme.colors.accentPrimary};
   border-radius: 10px;
@@ -19,10 +21,12 @@ export const PhonebookContainer = styled.div`
 
 export const TitleContainer = styled.div`
   display: flex;
-  gap: 20px;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
+
   padding: 0 20px 20px;
+
   border-bottom: 3px solid ${({ theme }) => theme.colors.accentPrimary};
 `;
 

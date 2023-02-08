@@ -7,15 +7,19 @@ export const FilterContainer = styled.div`
 export const FilterLabel = styled.label`
   position: absolute;
   top: 10px;
-  left: 9px;
+  left: 10px;
+
   padding: 0 5px;
+
   opacity: 0.8;
-  transition: all ${({ theme }) => theme.transitions.slower};
   pointer-events: none;
+
+  transition: all ${({ theme }) => theme.transitions.slower};
 `;
 
 export const FilterInput = styled.input`
   padding: 8px;
+
   background: ${({ theme }) => theme.colors.transparent};
   border: 2px solid ${({ theme }) => theme.colors.accentSecondary};
   border-radius: 5px;

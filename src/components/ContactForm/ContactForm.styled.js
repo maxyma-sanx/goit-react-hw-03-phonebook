@@ -15,13 +15,14 @@ export const LabelContainer = styled.div`
 export const Label = styled.label`
   position: absolute;
   top: 10px;
-  left: 9px;
+  left: 10px;
 
   padding: 0 5px;
 
   opacity: 0.8;
-  transition: all ${({ theme }) => theme.transitions.slower};
   pointer-events: none;
+
+  transition: all ${({ theme }) => theme.transitions.slower};
 `;
 
 export const InputContainer = styled.div`
@@ -35,7 +36,7 @@ export const InputContainer = styled.div`
 export const Input = styled.input`
   padding: 8px;
 
-  background: transparent;
+  background: ${({ theme }) => theme.colors.transparent};
   border: 2px solid ${({ theme }) => theme.colors.accentSecondary};
   border-radius: 5px;
 
@@ -66,6 +67,7 @@ export const Button = styled.button.attrs({ type: 'submit' })`
   border-radius: 5px;
   background-color: ${({ theme }) => theme.colors.accentPrimary};
   cursor: pointer;
+
   transition: background-color ${({ theme }) => theme.transitions.slower};
 
   :hover,
