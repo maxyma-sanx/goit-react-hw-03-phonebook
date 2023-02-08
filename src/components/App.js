@@ -27,22 +27,25 @@ export class App extends Component {
   };
 
   state = {
-    contacts: this.props.initialContacts,
+    contacts: [],
     filter: '',
   };
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.contacts !== prevState.contacts) {
-      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+  componentDidUpdate(_, prevState) {
+    const { contacts } = this.state;
+
+    if (contacts !== prevState.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(contacts));
     }
   }
 
   componentDidMount() {
     const localContacts = JSON.parse(localStorage.getItem('contacts'));
+    const { initialContacts } = this.props;
 
-    if (localContacts) {
-      this.setState({ contacts: localContacts });
-    }
+    localContacts
+      ? this.setState({ contacts: localContacts })
+      : this.setState({ contacts: initialContacts });
   }
 
   addContact = (name, number) => {
