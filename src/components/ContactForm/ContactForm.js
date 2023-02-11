@@ -19,6 +19,8 @@ export const ContactForm = ({ onSubmit }) => {
       e.currentTarget.elements.name.value,
       e.currentTarget.elements.number.value
     );
+
+    e.target.reset();
   };
 
   return (
